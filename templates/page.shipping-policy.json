@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "pc_tabbing_info_ehKCia": {
+      "type": "pc--tabbing-info",
+      "blocks": {
+        "tab_list_G93RVr": {
+          "type": "tab_list",
+          "settings": {
+            "title": "Wholesale/Bulk",
+            "url": "shopify://pages/wholesale-bulk"
+          }
+        },
+        "tab_list_amURmw": {
+          "type": "tab_list",
+          "settings": {
+            "title": "Custom Garment Dye",
+            "url": "shopify://pages/custom-garment-dye-1"
+          }
+        },
+        "tab_list_dL4QCf": {
+          "type": "tab_list",
+          "settings": {
+            "title": "Refund policy",
+            "url": "shopify://pages/refund-policy"
+          }
+        },
+        "tab_list_DYGx7J": {
+          "type": "tab_list",
+          "settings": {
+            "title": "Privacy policy",
+            "url": "shopify://pages/privacy-policy"
+          }
+        },
+        "tab_list_tHpwgL": {
+          "type": "tab_list",
+          "settings": {
+            "title": "Terms of service",
+            "url": "shopify://pages/terms-of-service"
+          }
+        },
+        "tab_list_GwtdhG": {
+          "type": "tab_list",
+          "settings": {
+            "title": "Shipping policy",
+            "url": "shopify://pages/shipping-policy"
+          }
+        },
+        "tab_data_bReRdk": {
+          "type": "tab_data",
+          "settings": {
+            "page_cnt": "shipping-policy"
+          }
+        }
+      },
+      "block_order": [
+        "tab_list_G93RVr",
+        "tab_list_amURmw",
+        "tab_list_dL4QCf",
+        "tab_list_DYGx7J",
+        "tab_list_tHpwgL",
+        "tab_list_GwtdhG",
+        "tab_data_bReRdk"
+      ],
+      "settings": {
+        "title": "Info"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "pc_tabbing_info_ehKCia"
+  ]
+}

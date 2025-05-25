@@ -1,0 +1,189 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "square"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "payment_icon_jU8tbW": {
+          "type": "payment_icon",
+          "settings": {
+            "payment_icon_name": "american_express,master,visa,klarna,google_pay,apple_pay,paypal,shopify_pay,unionpay"
+          }
+        },
+        "pickup_availability_VFxJJy": {
+          "type": "pickup_availability",
+          "settings": {}
+        },
+        "accordion_data_cWnqR9": {
+          "type": "accordion_data",
+          "settings": {
+            "title": "Are you buying wholesale?",
+            "accordion_desc": "<p>{{ product.metafields.custom.buying_wholesale.value }}</p>",
+            "page": ""
+          }
+        },
+        "accordion_data_tqUNtC": {
+          "type": "accordion_data",
+          "settings": {
+            "title": "Product Details",
+            "accordion_desc": "{{ product.description }}",
+            "page": ""
+          }
+        },
+        "accordion_data_kL6FHr": {
+          "type": "accordion_data",
+          "settings": {
+            "title": "Shipping & Returns",
+            "accordion_desc": "",
+            "page": "shipping-policy"
+          }
+        },
+        "accordion_data_xTTW3J": {
+          "type": "accordion_data",
+          "settings": {
+            "title": "Size Guide",
+            "accordion_desc": "",
+            "page": "{{ product.metafields.custom.size_chart.value }}"
+          }
+        },
+        "pro_shipping_info_ftPBf6": {
+          "type": "pro_shipping_info",
+          "settings": {
+            "ship_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewbox=\"0 0 16 16\" fill=\"none\">\n  <path d=\"M5.375 1L1.875 4.5L5.375 8\" stroke=\"#10100F\" stroke-width=\"1.4\"></path>\n  <path d=\"M1.77778 4.5H9.75C12.6495 4.5 15 6.85051 15 9.75V9.75C15 12.6495 12.6495 15 9.75 15H1\" stroke=\"#10100F\" stroke-width=\"1.4\"></path>\n</svg>",
+            "title": "14 Days Return Policy"
+          }
+        },
+        "pro_shipping_info_ENqJCy": {
+          "type": "pro_shipping_info",
+          "settings": {
+            "ship_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewbox=\"0 0 18 18\" fill=\"none\">\n  <circle cx=\"9\" cy=\"9\" r=\"8\" stroke=\"#10100F\" stroke-width=\"1.42222\"></circle>\n  <ellipse cx=\"9.00087\" cy=\"9\" rx=\"3.55556\" ry=\"8\" stroke=\"#10100F\" stroke-width=\"1.42222\"></ellipse>\n  <path d=\"M1.88867 6.33337H16.1109\" stroke=\"#10100F\" stroke-width=\"1.42222\"></path>\n  <path d=\"M1.88867 11.6666H16.1109\" stroke=\"#10100F\" stroke-width=\"1.42222\"></path>\n</svg>",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "complementary_b3qMxg": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "make_collapsible_row": false,
+            "icon": "price_tag",
+            "product_list_limit": 10,
+            "products_per_page": 3,
+            "pagination_style": "counter",
+            "image_ratio": "square",
+            "enable_quick_add": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "payment_icon_jU8tbW",
+        "pickup_availability_VFxJJy",
+        "accordion_data_cWnqR9",
+        "accordion_data_tqUNtC",
+        "accordion_data_kL6FHr",
+        "accordion_data_xTTW3J",
+        "pro_shipping_info_ftPBf6",
+        "pro_shipping_info_ENqJCy",
+        "complementary_b3qMxg",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "columns",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products"
+  ]
+}

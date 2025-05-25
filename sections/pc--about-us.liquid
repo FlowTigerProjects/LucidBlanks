@@ -1,0 +1,72 @@
+{% render 'pc--page-header' %}
+  {%- liquid
+    assign has_social_icons = true
+    if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
+      assign has_social_icons = false
+    endif
+  -%}
+<div class="about_sec">
+  <div class="container">
+    <div class="main_sec">
+      <div class="main_page_left">
+        <div class="main_page_data">
+          {% if section.settings.title != blank %}
+            <h3 class="main_sub_head">{{ section.settings.title }}</h3>
+          {% endif %}
+          {%- if section.settings.show_social and has_social_icons -%}
+            {%- render 'social-icons', class: 'footer__list-social' -%}
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="main_page_right">
+        <div class="page_content">
+          {% if section.settings.title1 != blank %}
+            <h3 class="main_sub_head">{{ section.settings.title1 }}</h3>
+          {% endif %}
+          {% if section.settings.sub_cnt != blank %}
+            <div class="sub_cnt">{{ section.settings.sub_cnt }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "About Us",
+    "settings": [      
+      {
+          "type": "paragraph",
+          "content": "t:sections.footer.blocks.brand_information.settings.paragraph.content"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social",
+        "default": true,
+        "label": "t:sections.footer.blocks.brand_information.settings.show_social.label",
+        "info": "t:sections.footer.blocks.brand_information.settings.show_social.info"
+      },
+      {
+        "type": "text",
+        "id": "title1",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "sub_cnt",
+        "label": "Description"
+      }
+    ],
+    "presets": [
+      {
+        "name": "About Us"
+      }
+    ]
+  }
+{% endschema %}

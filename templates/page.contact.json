@@ -1,0 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Get in Touch",
+        "desc": "<p>Before contacting Lucid Blanks, you might find the information you need in Wholesale/Bulk, Custom Garment Dye, Terms & Conditions and Shipping & Returns. Otherwise, please use the below form</p>",
+        "cnt_title": "Contact information",
+        "mail_title": "Email:",
+        "mail_id": "<p><a href=\"mailto:support@lucidblanks.com\" title=\"mailto:support@lucidblanks.com\">support@lucidblanks.com</a></p>",
+        "add_title": "Address:",
+        "add_id": "<p>2455 Lee Ave South El Monte, CA 91733, United States</p>",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "form"
+  ]
+}

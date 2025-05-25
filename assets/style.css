@@ -1,0 +1,100 @@
+
+
+
+body .customer_login .field label {
+    display: none;
+}
+body .customer_login .field  input::placeholder, body .customer_login .field textarea::placeholder {
+    opacity: 1 !important;
+    color: #10100F99;
+}
+body .customer_login .field input,body .customer_login .field textarea {
+    font-size: 14px;
+    line-height: 1.43;
+    color: var(--main-body-black-color);
+    font-family: var(--font-family-regular) !important;
+    height: auto;
+    min-height: auto;
+    margin: 0 !important;
+    padding: 15px 16px !important;
+    letter-spacing: 0;
+    border: 1px solid #E7E7E7;
+    transition: all 0.3s;
+}
+body .customer_login .field:after,body .customer_login .field:before {
+    content: unset;
+}
+body .customer_login .field textarea {
+  height: 104px;
+}
+body .customer_login .main_head{
+  margin-top: 80px !important;
+}
+body .customer_login .contact__button {
+  margin: 0;
+}
+
+body .customer_login .common_btn {
+  width: 100%;
+  font-size: 14px;
+  color: var(--main-body-white-color);
+  font-family: var(--font-family-Bold) !important;
+  text-transform: uppercase;
+  letter-spacing: -0.02px;
+  background: #10100F;
+  transition: all 0.3s;
+  line-height: 1.2;
+  height: auto;
+  min-height: auto;
+  padding: 18px 15px;
+  border:1px solid var(--main-body-black-color);
+}
+body .customer_login .common_btn:hover {
+  background: #32322F;
+  border-color:  #32322F;
+}
+body .customer_login .contact__button button:after,
+body .customer_login .contact__button button:before ,
+.customer_login  .common_btn:after,.customer_login .common_btn:before{
+  content: unset;
+}
+
+body .customer_login .field input:hover, body .customer_login .field textarea:hover {
+  border: 1px solid #10100F4D;
+}
+body .customer_login .field input:focus, body .customer_login .field textarea:focus {
+  border: 1px solid #10100F;
+  outline: unset;
+  box-shadow: unset;
+}
+.customer_login a.foegit_password {
+    font-family: var(--font-family-regular) !important;
+    font-size: 14px;
+}
+.customer_login .creat_account{
+    font-family: var(--font-family-regular) !important;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1199px) {
+    body .customer_login .main_head{
+      margin-top: 60px !important;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    body .customer_login .main_head{
+      margin-top: 50px !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    body .customer_login .main_head{
+      margin-top: 40px !important;
+    }
+}
+@media screen and (max-width: 575px) {
+   body .customer_login .customer:not(.account):not(.order)
+  {
+    max-width:100%
+  }
+}

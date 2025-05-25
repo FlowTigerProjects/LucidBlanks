@@ -1,0 +1,43 @@
+<div class="about_gallery_sec">
+    <div class="about_gallery_inner">
+      <div class="about_gallery_slide owl-carousel owl-theme">
+         {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'gallery' %}
+              {% if block.settings.image != blank %}
+                <div class="image_wrap">
+                   <img src="{{  block.settings.image | img_url: 'master' }}">
+                </div>
+              {% endif %}                  
+            {% endcase %}
+          {% endfor %}
+      </div>
+    </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "About Gallery",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "gallery",
+        "name": "About Gallery",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "About Gallery",
+      }
+    ]
+  }
+{% endschema %}

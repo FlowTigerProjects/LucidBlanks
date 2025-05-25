@@ -1,0 +1,66 @@
+<section class="banner_hero_section {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+  <div class="banner_inner_info">
+    <div class="banner_inner_row">
+      <div class="banner_img_col">
+      {% if section.settings.banner_img != blank %}
+          <img src="{{ section.settings.banner_img | img_url: 'master' }}" class="banner_desk_img">
+      {% endif %}
+      {% if section.settings.banner_mob_img != blank %}
+          <img src="{{ section.settings.banner_mob_img | img_url: 'master' }}" class="banner_mob_img">
+      {% endif %}
+      </div>
+      <div class="banner_details_info">
+        <div class="banner_details_inner {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {%- if section.settings.banner_title != blank -%}
+             <div>{{ section.settings.banner_title }}</div>
+          {%- endif -%}
+          <div class="banner_details_btn">
+             {%- if section.settings.btn_text != blank -%}
+              <a class="banner_btn" href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+             {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Hero Banner Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner_img",
+        "label": "Add Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_mob_img",
+        "label": "Add Mobile Image"
+      },
+      {
+        "type":"richtext",
+        "id":"banner_title",
+        "label":"Add Banner Title"
+      },
+      {
+        "type":"url",
+        "id":"btn_url",
+        "label":"Add Button Url"
+      },
+      {
+        "type":"text",
+        "id":"btn_text",
+        "label":"Add Button Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Banner Section"
+      }
+    ]
+  }
+{% endschema %}

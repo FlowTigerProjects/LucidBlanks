@@ -1,0 +1,52 @@
+<section class="collection_section mb_80 {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="container_full">
+    <div class="collection_content_wapper">
+      <div class="collection_inner_info">
+        {% for block in section.blocks %}
+          <div class="collection_main_wrapper">
+             {% assign collection = block.settings.select_collection %}
+                <a href="{{ collection.url }}" class="collection_link">
+                  <div class="collection_img">
+                     {% if collection.featured_image %}
+                       <img src="{{ collection.featured_image | img_url: 'master' }}" alt="" >
+                     {% endif %}
+                  </div>
+                  <div class="collection_product_detail">
+                    <div class="collection_title">
+                      {% if collection.title %}
+                         <h2>{{ collection.title }}</h2>
+                      {% endif %}
+                    </div>
+                  </div>
+                </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Collection Slider Section",
+    "settings": [
+    ],
+    "blocks": [
+      {
+       "type": "Collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "select_collection",
+            "label": "Select Collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection Slider Section"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,98 @@
+<div class="page_title_sec main_page_title_sec">
+  <div class="container">
+    {% if section.settings.title != blank %}
+      <h2 class="main_head">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+  </div>
+</div>
+
+<div class="tab_info_sec">
+  <div class="container">
+    <div class="main_sec">
+      <div class="main_page_left">
+        <div class="main_page_data">
+          <button class="tab_drop">
+            <span>Select a page </span>
+            <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12.3131 0.414667L6.65625 6.07152L0.999396 0.414667" stroke="#10100F"/> </svg>
+          </button>
+          <ul id="linkList" class="tab_drop_menu">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'tab_list' %}
+                {% if block.settings.title != blank %}
+                  <li><a href="{% if block.settings.url != blank %} {{ block.settings.url }} {% endif %} ">{{ block.settings.title }}</a></li>
+                {% endif %}                  
+              {% endcase %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="main_page_right">
+        <div class="page_tab_data">
+          {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'tab_data' %}
+                {% if block.settings.page_cnt != blank %}
+                  <div class="page_content">
+                    {{ block.settings.page_cnt.content  }}
+                  </div>
+                {% endif %}                  
+              {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "Tabbing Page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "tab_list",
+        "name": "Tab List",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          }
+        ]
+      },
+      {
+        "type": "tab_data",
+        "name": "Tab Data",
+        "settings": [
+          {
+            "type": "page",
+            "label": "Select Content",
+            "id": "page_cnt"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Tabbing"
+      }
+    ]
+  }
+{% endschema %}
