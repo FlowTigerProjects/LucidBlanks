@@ -1315,6 +1315,31 @@ body .cart-item-recommendations .recommendation-parent-div .variant-action-wrap.
 body .quantity-tooltip {
   margin-top: 9px;
 }
+.announcement-bar__announcement {
+  width: fit-content;
+}
+.play-pause-button {
+  display: flex;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  color: rgb(var(--color-foreground));
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.play-pause-button:hover {
+  opacity: 0.8;
+}
+.play-pause-button .svg-wrapper {
+  padding: .2rem 0;
+}
+.play-pause-button:not(.paused) .icon-play {
+  display: none;
+}
+.play-pause-button.paused .icon-pause {
+  display: none;
+}
 
 @media screen and (max-width:767px){  
   body .cart-item-recommendations .recommendation-parent-div .variant-action-wrap .variant-dropdown button {
