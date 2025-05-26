@@ -736,15 +736,17 @@ class SliderComponent extends HTMLElement {
     this.prevButton = this.querySelector('button[name="previous"]');
     this.nextButton = this.querySelector('button[name="next"]');
 
-    if (!this.slider || !this.nextButton) return;
+    if (!this.slider) return;
 
     this.initPages();
     const resizeObserver = new ResizeObserver((entries) => this.initPages());
     resizeObserver.observe(this.slider);
 
     this.slider.addEventListener('scroll', this.update.bind(this));
-    this.prevButton.addEventListener('click', this.onButtonClick.bind(this));
-    this.nextButton.addEventListener('click', this.onButtonClick.bind(this));
+    if (this.prevButton && this.nextButton) {
+      this.prevButton.addEventListener('click', this.onButtonClick.bind(this));
+      this.nextButton.addEventListener('click', this.onButtonClick.bind(this));
+    }
   }
 
   initPages() {
@@ -766,7 +768,7 @@ class SliderComponent extends HTMLElement {
   update() {
     // Temporarily prevents unneeded updates resulting from variant changes
     // This should be refactored as part of https://github.com/Shopify/dawn/issues/2057
-    if (!this.slider || !this.nextButton) return;
+    if (!this.slider) return;
 
     const previousPage = this.currentPage;
     this.currentPage = Math.round(this.slider.scrollLeft / this.sliderItemOffset) + 1;
@@ -788,17 +790,19 @@ class SliderComponent extends HTMLElement {
     }
 
     if (this.enableSliderLooping) return;
-
-    if (this.isSlideVisible(this.sliderItemsToShow[0]) && this.slider.scrollLeft === 0) {
-      this.prevButton.setAttribute('disabled', 'disabled');
-    } else {
-      this.prevButton.removeAttribute('disabled');
-    }
-
-    if (this.isSlideVisible(this.sliderItemsToShow[this.sliderItemsToShow.length - 1])) {
-      this.nextButton.setAttribute('disabled', 'disabled');
-    } else {
-      this.nextButton.removeAttribute('disabled');
+    
+    if(this.prevButton && this.nextButton) {
+      if (this.isSlideVisible(this.sliderItemsToShow[0]) && this.slider.scrollLeft === 0) {
+        this.prevButton.setAttribute('disabled', 'disabled');
+      } else {
+        this.prevButton.removeAttribute('disabled');
+      }
+  
+      if (this.isSlideVisible(this.sliderItemsToShow[this.sliderItemsToShow.length - 1])) {
+        this.nextButton.setAttribute('disabled', 'disabled');
+      } else {
+        this.nextButton.removeAttribute('disabled');
+      }
     }
   }
 
@@ -854,15 +858,17 @@ class SlideshowComponent extends SliderComponent {
         if (this.slider.getAttribute('data-autoplay') === 'true') this.setAutoPlay();
       });
 
-      [this.prevButton, this.nextButton].forEach((button) => {
-        button.addEventListener(
-          'click',
+      if (this.prevButton && this.nextButton) {
+        [this.prevButton, this.nextButton].forEach((button) => {
+          button.addEventListener(
+            'click',
           () => {
             this.announcementBarArrowButtonWasClicked = true;
           },
-          { once: true }
-        );
-      });
+            { once: true }
+          );
+        });
+      }
     }
 
     if (this.slider.getAttribute('data-autoplay') === 'true') this.setAutoPlay();
@@ -921,7 +927,9 @@ class SlideshowComponent extends SliderComponent {
   update() {
     super.update();
     this.sliderControlButtons = this.querySelectorAll('.slider-counter__link');
-    this.prevButton.removeAttribute('disabled');
+    if (this.prevButton) {
+      this.prevButton.removeAttribute('disabled');
+    }
 
     if (!this.sliderControlButtons.length) return;
 

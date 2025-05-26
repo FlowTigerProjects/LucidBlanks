@@ -1315,6 +1315,16 @@ body .cart-item-recommendations .recommendation-parent-div .variant-action-wrap.
 body .quantity-tooltip {
   margin-top: 9px;
 }
+.announcement-bar__announcement {
+  width: fit-content;
+}
+.announcement-bar-slider .slideshow__autoplay.slider-button {
+  height: unset;
+  width: unset;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
 
 @media screen and (max-width:767px){  
   body .cart-item-recommendations .recommendation-parent-div .variant-action-wrap .variant-dropdown button {
