@@ -1325,6 +1325,24 @@ body .quantity-tooltip {
   padding: 0;
   border: none;
 }
+.announcement-bar-slider .svg-wrapper {
+  position: relative;
+  height: 1.6rem;
+  width: 1.6rem;
+}
+.announcement-bar-slider .slideshow__autoplay .icon.icon-play, 
+.announcement-bar-slider .slideshow__autoplay .icon.icon-pause {
+  width: 100%;
+  height: 100%;
+}
+.announcement-bar-slider .slideshow__autoplay path {
+  opacity: .75;
+  fill: unset;
+}
+.announcement-bar-slider .slideshow__autoplay:hover path {
+  opacity: 1;
+  fill: unset;
+}
 .accordion_data_sec .accordion_data_title.discount_alert__message {
   align-items: center;
   display: flex;
@@ -1449,6 +1467,10 @@ body .quantity-tooltip {
   body .cart-item-recommendations .recommendation-parent-div .variant-action-wrap .variant-dropdown button:after {
     width: 11px;
     height: 7px;
+  }
+  .announcement-bar-slider .svg-wrapper {
+    height: 1.4rem;
+    width: 1.4rem;
   }
 }
 
