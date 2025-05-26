@@ -410,3 +410,8 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
 .cart-drawer__upsell {
   padding: 2rem;
 }
+@media screen and (max-width: 767px) {
+  .cart-drawer__upsell {
+    padding: 1rem;
+  }
+}

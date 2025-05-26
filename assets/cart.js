@@ -60,6 +60,9 @@ class CartItems extends HTMLElement {
   validateQuantity(event) {
     const inputValue = parseInt(event.target.value);
     const index = event.target.dataset.index;
+
+    if(!event.target.dataset.min || !event.target.dataset.max || !event.target.dataset.step) return;
+    
     let message = '';
 
     if (inputValue < event.target.dataset.min) {

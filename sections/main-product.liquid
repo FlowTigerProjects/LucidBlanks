@@ -103,12 +103,9 @@
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
-                {% unless block.id == "AalZhck43bURnSnV6T__aiod_all_in_1_discount_volume_offer_QgT4Dj-1" %}
-                  <script>
-                    console.log('{{ block.id }}');
-                  </script>
+                {% if block.id != "AemZ2LzdkNTQzY1ZWQ__aiod_all_in_1_discount_volume_offer_QgT4Dj-1" %}
                   {% render block %}
-                {% endunless %}
+                {% endif %}
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -699,7 +696,7 @@
                           </div>
                         </div>
                       {% when '@app' %}
-                        {% if block.id == "AalZhck43bURnSnV6T__aiod_all_in_1_discount_volume_offer_QgT4Dj" %}
+                        {% if block.id == "AemZ2LzdkNTQzY1ZWQ__aiod_all_in_1_discount_volume_offer_QgT4Dj" %}
                           {%- assign accordion_index = accordion_index | plus: 1 -%}
                           <div class="accordion_data_list {% if accordion_index == 1 %}default-open{% endif %}">
                             <div class="accordion_data_title">
