@@ -174,8 +174,8 @@ $(document).ready(function () {
   });
 
   // Auto-open second accordion
-  $('.accordion_data_list:eq(1)').addClass('active');
-  $('.accordion_data_list:eq(1) .accordion_data_desc').slideDown();
+  $('.accordion_data_list:eq(0)').addClass('active');
+  $('.accordion_data_list:eq(0) .accordion_data_desc').slideDown();
 });
 
 

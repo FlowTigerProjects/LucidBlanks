@@ -1325,6 +1325,38 @@ body .quantity-tooltip {
   padding: 0;
   border: none;
 }
+.accordion_data_sec .accordion_data_title.discount_alert__message {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  padding: 10px;
+  line-height: 1;
+  background: #E7E7E7;
+}
+.discount_alert__message svg {
+  width: 20px;
+  height: auto;
+}
+.discount_app__extra_info_text {
+  padding: 16px 0 0;
+}
+.discount_app__extra_info_text a {
+  text-decoration: underline;
+}
+.accordion_data_desc .csapps-volume-discount-tiers, .cs_bogo_get_pro_wrpr {
+  border-radius: 0;
+  margin-top: 10px;
+}
+.new_product .accordion_data_desc table.csapps-table {
+  background: rgb(var(--color-background));
+}
+.csapps-table thead tr th {
+  font-family: var(--font-family-Bold) !important;
+}
+.new_product .accordion_data_desc table.csapps-table tr td {
+  font-family: var(--font-family-regular) !important;
+  font-weight: 400;
+}
 
 @media screen and (max-width:767px){  
   body .cart-item-recommendations .recommendation-parent-div .variant-action-wrap .variant-dropdown button {

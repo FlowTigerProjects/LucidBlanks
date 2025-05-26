@@ -103,7 +103,12 @@
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
-                {% render block %}
+                {% unless block.id == "AalZhck43bURnSnV6T__aiod_all_in_1_discount_volume_offer_QgT4Dj-1" %}
+                  <script>
+                    console.log('{{ block.id }}');
+                  </script>
+                  {% render block %}
+                {% endunless %}
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -678,27 +683,48 @@
               <div class="accordion_data_sec">
                   {%- for block in section.blocks -%}
                     {%- case block.type -%}
-                      {% when 'accordion_data' %}
-                      
+                    {% when 'accordion_data' %}
+                        {%- assign accordion_index = accordion_index | plus: 1 -%}
+                        <div class="accordion_data_list {% if accordion_index == 1 %}default-open{% endif %}">
+                          <div class="accordion_data_title">
+                            {% if block.settings.title != blank %}
+                            {{ block.settings.title }}
+                              {% endif %}
+                            <svg class="accordion_icon accordian_plus" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M4 0V8" stroke="#10100F" stroke-width="1.5"/><path d="M8 4L-3.57628e-07 4" stroke="#10100F" stroke-width="1.5"/></svg>  
+                            <svg class="accordion_icon accordian_minus" xmlns="http://www.w3.org/2000/svg" width="8" height="2" viewBox="0 0 8 2" fill="none"><path d="M8 1L-3.57628e-07 1" stroke="#10100F" stroke-width="1.5"/></svg>
+                          </div>
+                          <div class="accordion_data_desc">
+                            {{ block.settings.accordion_desc }}
+                            {{ block.settings.page.content }}
+                          </div>
+                        </div>
+                      {% when '@app' %}
+                        {% if block.id == "AalZhck43bURnSnV6T__aiod_all_in_1_discount_volume_offer_QgT4Dj" %}
                           {%- assign accordion_index = accordion_index | plus: 1 -%}
-                            <div class="accordion_data_list {% if accordion_index == 1 %}default-open{% endif %}">
-                              <div class="accordion_data_title">
-                                {% if block.settings.title != blank %}
-                                {{ block.settings.title }}
-                                  {% endif %}
-                               <svg class="accordion_icon accordian_plus" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M4 0V8" stroke="#10100F" stroke-width="1.5"/><path d="M8 4L-3.57628e-07 4" stroke="#10100F" stroke-width="1.5"/></svg>  
-                               <svg class="accordion_icon accordian_minus" xmlns="http://www.w3.org/2000/svg" width="8" height="2" viewBox="0 0 8 2" fill="none"><path d="M8 1L-3.57628e-07 1" stroke="#10100F" stroke-width="1.5"/></svg>
-                              </div>
-                              <div class="accordion_data_desc">
-                                {{ block.settings.accordion_desc }}
-                                {{ block.settings.page.content }}
+                          <div class="accordion_data_list {% if accordion_index == 1 %}default-open{% endif %}">
+                            <div class="accordion_data_title">
+                              Are you buying wholesale?
+                              <svg class="accordion_icon accordian_plus" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M4 0V8" stroke="#10100F" stroke-width="1.5"/><path d="M8 4L-3.57628e-07 4" stroke="#10100F" stroke-width="1.5"/></svg>  
+                              <svg class="accordion_icon accordian_minus" xmlns="http://www.w3.org/2000/svg" width="8" height="2" viewBox="0 0 8 2" fill="none"><path d="M8 1L-3.57628e-07 1" stroke="#10100F" stroke-width="1.5"/></svg>
+                            </div>
+                            <div class="accordion_data_desc">
+                              {% render block %}
+                              <div class="discount_app__extra_info">
+                                <div class="discount_alert__message accordion_data_title">
+                                  {{- 'icon-discount.svg' | inline_asset_content -}}
+                                  The discount will automatically be applied at checkout.
+                                </div>
+                                <div class="discount_app__extra_info_text">
+                                  <p>Need help with buying wholesale?</p>
+                                  <p>Please email us at <a href="mailto:wholesale@lucidblanks.com">wholesale@lucidblanks.com</a></p>
+                                </div>
                               </div>
                             </div>
-                     
+                          </div>
+                        {% endif %}
                     {%- endcase -%}
                   {%- endfor -%}
                 </div>
-
                                 
               <div class="pro_shipping_sec">
                 {%- for block in section.blocks -%}

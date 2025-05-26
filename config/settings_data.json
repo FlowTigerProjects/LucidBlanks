@@ -145,14 +145,6 @@
     },
     "content_for_index": [],
     "blocks": {
-      "127709043890318779": {
-        "type": "shopify://apps/aiod-all-in-1-discount/blocks/install-snippets/9537caf0-36d5-4981-a648-8961a8e85652",
-        "disabled": true,
-        "settings": {
-          "aiod_v2_call": "",
-          "aiod_dev_api_call": ""
-        }
-      },
       "1074493345574519553": {
         "type": "shopify://apps/one-ai-email-sms-marketing/blocks/embed-pixel/e2660a3c-4398-468f-b8cb-e4e470225df5",
         "disabled": true,
@@ -162,6 +154,14 @@
         "type": "shopify://apps/zendesk/blocks/zendesk_web_widget/c0b417b1-b90b-4754-baaf-f55627e6acd4",
         "disabled": true,
         "settings": {}
+      },
+      "127709043890318779": {
+        "type": "shopify://apps/aiod-all-in-1-discount/blocks/install-snippets/9537caf0-36d5-4981-a648-8961a8e85652",
+        "disabled": false,
+        "settings": {
+          "aiod_v2_call": "",
+          "aiod_dev_api_call": ""
+        }
       }
     },
     "color_schemes": {

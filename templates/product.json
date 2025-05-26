@@ -56,13 +56,9 @@
           "type": "pickup_availability",
           "settings": {}
         },
-        "accordion_data_cWnqR9": {
-          "type": "accordion_data",
-          "settings": {
-            "title": "Are you buying wholesale?",
-            "accordion_desc": "<p>{{ product.metafields.custom.buying_wholesale.value }}</p>",
-            "page": ""
-          }
+        "aiod_all_in_1_discount_volume_offer_QgT4Dj": {
+          "type": "shopify://apps/aiod-all-in-1-discount/blocks/volume-offer/9537caf0-36d5-4981-a648-8961a8e85652",
+          "settings": {}
         },
         "accordion_data_tqUNtC": {
           "type": "accordion_data",
@@ -137,7 +133,7 @@
         "buy_buttons",
         "payment_icon_jU8tbW",
         "pickup_availability_VFxJJy",
-        "accordion_data_cWnqR9",
+        "aiod_all_in_1_discount_volume_offer_QgT4Dj",
         "accordion_data_tqUNtC",
         "accordion_data_kL6FHr",
         "accordion_data_xTTW3J",
