@@ -620,7 +620,9 @@ class ModalDialog extends HTMLElement {
   connectedCallback() {
     if (this.moved) return;
     this.moved = true;
-    this.dataset.section = this.closest('.shopify-section').id.replace('shopify-section-', '');
+    if(this.closest('.shopify-section')){
+      this.dataset.section = this.closest('.shopify-section').id.replace('shopify-section-', '');
+    }
     document.body.appendChild(this);
   }
 
@@ -1158,6 +1160,8 @@ class ProductRecommendations extends HTMLElement {
   }
 
   loadRecommendations(productId) {
+    if (!this.dataset.url || !this.dataset.sectionId || !this.dataset.productId) return;
+
     fetch(`${this.dataset.url}&product_id=${productId}&section_id=${this.dataset.sectionId}`)
       .then((response) => response.text())
       .then((text) => {

@@ -22,77 +22,41 @@
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <product-recommendations
-    class="hidden related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    class="related-products container mb_80 section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
     data-section-id="{{ section.id }}"
     data-product-id="{{ product.id }}"
   >
-    {% if recommendations.performed and recommendations.products_count > 0 %}
-      <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-        {{ section.settings.heading }}
-      </h2>
-      <ul
-        class="product_main_row grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-        role="list"
-      >
-        {% assign skip_card_product_styles = false %}
-        {% for recommendation in recommendations.products %}
-          <li class="product_inner_col grid__item">
-            {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              image_shape: section.settings.image_shape,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating,
-              skip_styles: skip_card_product_styles
-            %}
-          </li>
-          {%- assign skip_card_product_styles = true -%}
-        {% endfor %}
-      </ul>
-    {% endif %}
+    <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
+      {{ section.settings.heading }}
+    </h2>
+    <ul
+      class="product_main_row grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+      role="list"
+    >
+      {% assign skip_card_product_styles = false %}
+      {% assign related_products = product.metafields.custom.related_products.value %}
+      {% for recommendation in related_products %}
+        <li class="product_inner_col grid__item">
+          {% render 'card-product',
+            card_product: recommendation,
+            media_aspect_ratio: section.settings.image_ratio,
+            image_shape: section.settings.image_shape,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_vendor: section.settings.show_vendor,
+            show_rating: section.settings.show_rating,
+            skip_styles: skip_card_product_styles
+          %}
+        </li>
+        {%- assign skip_card_product_styles = true -%}
+      {% endfor %}
+    </ul>
   </product-recommendations>
   {% if section.settings.image_shape == 'arch' %}
     {{ 'mask-arch.svg' | inline_asset_content }}
   {%- endif -%}
 </div>
-<div
-  class="my-product mb_80 section-{{ section.id }}-padding container"
-  data-product-id="{{ product.id }}"
-  data-section-id="{{ section.id }}"
-></div>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const productElement = document.querySelector(".my-product");
-  const productId = productElement?.getAttribute("data-product-id");
-  const sectionId = productElement?.getAttribute("data-section-id");
 
-  if (!productId || !sectionId) return;
-
-  const url = `/recommendations/products?section_id=${sectionId}&product_id=${productId}&limit=4`;
-
-  fetch(url)
-    .then((res) => res.text())
-    .then((html) => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, "text/html");
-      const recommendationsHtml = doc.querySelector(".product-grid");
-
-      if (recommendationsHtml && recommendationsHtml.children.length > 0) {
-        productElement.innerHTML = `
-          <h2 class="related-products__heading">{{ section.settings.heading }}</h2>
-        `;
-        productElement.appendChild(recommendationsHtml);
-      } 
-    })
-    .catch((err) => {
-      console.error("Error fetching recommendations:", err);
-      productElement.innerHTML = `<p>Error loading recommendations.</p>`;
-    });
-});
-
-</script>
 {% schema %}
 {
   "name": "t:sections.related-products.name",

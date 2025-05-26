@@ -372,7 +372,22 @@
           </div>
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
-                      {% render 'pc--custome-recommendations' %}
+
+        {%- if cart != empty -%}
+          {%- for item in cart.items -%}
+            {% assign related_products = item.product.metafields.custom.related_products.value %}
+            {% if related_products.count > 0 %}
+              {%- assign upsell_product = item.product -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+          
+          {%- if upsell_product != blank -%}
+            <div class="cart-drawer__upsell">
+              {% render 'upsell-products', product: upsell_product %}
+            </div>
+          {%- endif -%}
+        {%- endif -%}
           
       </cart-drawer-items>
                         
@@ -536,7 +551,7 @@ document.addEventListener('change', function (e) {
       alert('You cannot set quantity to 0 for the last item in your cart.');
       e.target.value = 1;
 
-      // Prevent further propagation so Shopify’s cart logic doesn’t break
+      // Prevent further propagation so Shopify's cart logic doesn't break
       e.preventDefault();
       e.stopImmediatePropagation(); // 🔥 THIS is the fix
 
