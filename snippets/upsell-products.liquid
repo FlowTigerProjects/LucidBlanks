@@ -135,6 +135,7 @@
     {{ 'quick-add.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const variantSelects = document.querySelectorAll('.product-variant-select[data-variant-select]');
