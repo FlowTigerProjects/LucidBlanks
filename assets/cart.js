@@ -45,7 +45,6 @@ class CartItems extends HTMLElement {
   resetQuantityInput(id) {
    let input = this.querySelector(`#Quantity-${id}`) || this.querySelector(`#Drawer-quantity-${id}`) ||  this.querySelector(`#Quantity-template-${id}`);
 
-    console.log(input,'input')
     input.value = input.getAttribute('value');
     this.isEnterPressed = false;
   }
@@ -61,8 +60,6 @@ class CartItems extends HTMLElement {
     const inputValue = parseInt(event.target.value);
     const index = event.target.dataset.index;
 
-    if(!event.target.dataset.min || !event.target.dataset.max || !event.target.dataset.step) return;
-    
     let message = '';
 
     if (inputValue < event.target.dataset.min) {
@@ -89,7 +86,9 @@ class CartItems extends HTMLElement {
   }
 
   onChange(event) {
-    this.validateQuantity(event);
+    if (!event.target.hasAttribute('data-variant-select')) {
+      this.validateQuantity(event);
+    }
   }
 
   onCartUpdate() {
