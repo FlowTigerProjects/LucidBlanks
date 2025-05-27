@@ -1423,6 +1423,12 @@
         "label": "t:settings_schema.cart.settings.cart_type.label"
       },
       {
+        "type": "checkbox",
+        "id": "cart_drawer_recommendations_enabled",
+        "label": "Enable Cart Drawer Recommandations",
+        "default": true
+      },
+      {
         "type": "text",
         "id": "cart_drawer_recommendations_heading",
         "label": "Recommandation Title"

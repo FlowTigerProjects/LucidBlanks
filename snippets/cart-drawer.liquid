@@ -373,7 +373,7 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
 
-        {%- if cart != empty -%}
+        {%- if cart != empty and settings.cart_drawer_recommendations_enabled -%}
           {%- for item in cart.items -%}
             {% assign related_products = item.product.metafields.custom.related_products.value %}
             {% if related_products.count > 0 %}

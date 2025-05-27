@@ -487,7 +487,8 @@ form#product-form-installment-template--24335125840178__main {
     color: var(--main-body-black-color) !important;
     font-weight: 700;
 }
-.new_product .price {
+.new_product .price,
+.new_product .price__regular {
     font-family: var(--font-family-regular) !important;
     font-size: 20px;
     color: #10100F;

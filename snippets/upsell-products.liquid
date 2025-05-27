@@ -3,7 +3,7 @@
   assign make_collapsible_row = block.settings.make_collapsible_row | default: false
   assign enable_quick_add = block.settings.enable_quick_add | default: true
   assign product_list_limit = block.settings.product_list_limit | default: 10
-  assign block_heading = block.settings.block_heading | default: 'You may also like'
+  assign block_heading = block.settings.block_heading | default: settings.cart_drawer_recommendations_heading
   assign icon = block.settings.icon | default: 'icon-caret'
   assign products_per_page = block.settings.products_per_page | default: 1
   assign image_ratio = block.settings.image_ratio | default: 'square'
@@ -138,6 +138,8 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const variantSelects = document.querySelectorAll('.product-variant-select[data-variant-select]');
+
+      if (!variantSelects) return;
 
       variantSelects.forEach((select) => {
         select.addEventListener('change', function (event) {
