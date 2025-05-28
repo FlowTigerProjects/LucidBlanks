@@ -1398,8 +1398,10 @@ body .quantity-tooltip {
 }
 .new_product .complementary-products__container .quick-add__submit,
 .cart-drawer__upsell .complementary-products__container .quick-add__submit {
+  font-family: var(--font-family-Bold);
   background: rgb(var(--color-foreground));
   color: rgb(var(--color-background));
+  letter-spacing: 0;
   min-width: unset;
   max-height: 3.6rem;
   padding: 1rem;
@@ -1459,6 +1461,18 @@ body .quantity-tooltip {
 .cart-drawer__upsell slideshow-component {
   gap: 1rem;
 }
+.new_product .accordion__title,
+.cart-drawer__upsell .accordion__title {
+  font-size: 1.4rem;
+}
+.new_product .card--horizontal .card__heading,
+.cart-drawer__upsell .card--horizontal .card__heading {
+  letter-spacing: 0;
+}
+.new_product .card--horizontal .card-information>.price,
+.cart-drawer__upsell .card--horizontal .card-information>.price {
+  color: #10100F;
+}
 .card-product-multiple-variants form {
   display: flex;
   gap: 1rem;
@@ -1469,15 +1483,18 @@ body .quantity-tooltip {
   padding: 0 1rem;
   box-shadow: none;
   background: #f7f7f7;
-  max-width: 7.2rem;
-  width: 100%;
+  min-width: 7.2rem;
   font-size: 1.4rem;
+  color: #10100F;
   -webkit-appearance: none;
   -moz-appearance: none;
   background-image: url('data:image/svg+xml,<svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.3136 0.656854L6.65674 6.31371L0.999884 0.656854" stroke="%2310100F"/></svg>');
   background-repeat: no-repeat;
   background-position-x: 80%;
   background-position-y: 50%;
+}
+.drawer .cart-drawer .cart-item:last-child {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width:767px){  
@@ -1591,15 +1608,13 @@ body .quantity-tooltip {
     max-height: 2.4rem;
   }
   .card-product-multiple-variants form .product-variant-select {
+    min-width: 4.7rem;
     font-size: 1.2rem;
     padding: 0 0.8rem;
     background-size: 10px;
     background-position-x: 90%;
   }
 }
-
-
-
 
 
 
