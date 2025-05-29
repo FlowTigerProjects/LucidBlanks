@@ -1343,16 +1343,19 @@ body .quantity-tooltip {
   opacity: 1;
   fill: unset;
 }
+.discount_app__extra_info {
+  margin-top: 2rem;
+}
 .accordion_data_sec .accordion_data_title.discount_alert__message {
   align-items: center;
   display: flex;
   gap: 1rem;
-  padding: 10px;
-  line-height: 1;
+  padding: 1rem;
+  line-height: 1.3;
   background: #E7E7E7;
 }
 .discount_alert__message svg {
-  width: 20px;
+  width: 2rem;
   height: auto;
 }
 .discount_app__extra_info_text {
