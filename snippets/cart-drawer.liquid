@@ -374,19 +374,9 @@
         </form>
 
         {%- if cart != empty and settings.cart_drawer_recommendations_enabled -%}
-          {%- for item in cart.items -%}
-            {% assign related_products = item.product.metafields.custom.related_products.value %}
-            {% if related_products.count > 0 %}
-              {%- assign upsell_product = item.product -%}
-              {%- break -%}
-            {%- endif -%}
-          {%- endfor -%}
-          
-          {%- if upsell_product != blank -%}
-            <div class="cart-drawer__upsell">
-              {% render 'upsell-products', product: upsell_product %}
-            </div>
-          {%- endif -%}
+          <div class="cart-drawer__upsell">
+            {% render 'upsell-products', cart_upsell: true %}
+          </div>
         {%- endif -%}
           
       </cart-drawer-items>

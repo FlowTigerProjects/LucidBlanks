@@ -1,5 +1,9 @@
 {% liquid
-  assign related_products = product.metafields.custom.related_products.value
+  if cart_upsell
+    assign related_products = shop.metafields.cart.upsell_products.value
+  else
+    assign related_products = product.metafields.custom.related_products.value
+  endif
   assign make_collapsible_row = block.settings.make_collapsible_row | default: false
   assign enable_quick_add = block.settings.enable_quick_add | default: true
   assign product_list_limit = block.settings.product_list_limit | default: 10
