@@ -581,7 +581,6 @@ body.index .section-header.scrolled-past-header .header-wrapper--border-bottom {
     font-size: 12px;
   }
   body .utility-bar .announcement-bar__message {
-    padding: 5px 0;
     font-size: 14px;
   }
 }
@@ -1519,7 +1518,9 @@ body .quantity-tooltip {
   width: 1.4rem;
   height: 1.4rem;
 }
-
+body .utility-bar .announcement-bar__message {
+  padding-block-start: 0.8rem;
+}
 
 @media screen and (max-width:767px){  
   body .cart-item-recommendations .recommendation-parent-div .variant-action-wrap .variant-dropdown button {
