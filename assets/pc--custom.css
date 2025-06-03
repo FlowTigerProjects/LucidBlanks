@@ -1325,6 +1325,14 @@ body .quantity-tooltip {
   padding: 0;
   border: none;
 }
+.utility-bar .announcement-bar__announcement .announcement-bar__message {
+  min-height: unset;
+  line-height: 1;
+}
+.utility-bar .announcement-bar__announcement .announcement-bar__message span {
+  line-height: 1;
+  vertical-align: middle;
+}
 .announcement-bar-slider .svg-wrapper {
   position: relative;
   height: 1.6rem;
