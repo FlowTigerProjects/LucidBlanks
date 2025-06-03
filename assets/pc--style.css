@@ -645,15 +645,19 @@ form#product-form-installment-template--24335125840178__main {
 }
 .new_product .common_btn.product-form__submit {
     padding: 16px 0 14px;
-    color: var(--main-body-black-color) !important;
-    border: 1px solid var(--main-body-black-color) !important;
-    background: var(--main-body-white-color) !important;
     margin: 0 0 16px 0;
     letter-spacing: -0.28px;
 }
-.new_product .common_btn.product-form__submit:hover {
-    color: #fff !important;
-    background: #32322F !important;
+.new_product .common_btn.product-form__submit,
+body .cart-drawer .cart__checkout-button {
+  background: var(--main-body-black-color) !important;
+  border: 1px solid var(--main-body-black-color) !important;
+  color: var(--main-body-white-color) !important;
+}
+.new_product .common_btn.product-form__submit:hover,
+body .cart-drawer .cart__checkout-button:hover {
+    background: #fff !important;
+    color: #32322F !important;
     border-color: #32322F !important;
 }
 .new_product .common_btn.product-form__submit span {
