@@ -1094,7 +1094,9 @@ body .common_btn.outline_btn:hover {
   background: #32322f;
   color: var(--main-body-white-color);
 }
-.drawer__footer .cart-drawer__footer,.cart-drawer .drawer__cart-items-wrapper thead {
+.drawer__footer .cart-drawer__footer .totals,
+.drawer__footer .cart-drawer__footer .tax-note,
+.cart-drawer .drawer__cart-items-wrapper thead {
   display: none;
 }
 .drawer__footer.drawer__ {
@@ -1505,6 +1507,19 @@ body .quantity-tooltip {
 .drawer .cart-drawer .cart-item:last-child {
   margin-bottom: 0;
 }
+.cart-drawer__footer-discounts {
+  margin-block: 1.5rem;
+}
+.cart-drawer__footer .discounts__discount {
+  letter-spacing: 0;
+  line-height: 1;
+  font-size: 1.4rem;
+}
+.cart-drawer__footer .discounts__discount svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
 
 @media screen and (max-width:767px){  
   body .cart-item-recommendations .recommendation-parent-div .variant-action-wrap .variant-dropdown button {
@@ -1622,6 +1637,12 @@ body .quantity-tooltip {
     padding: 0 0.8rem;
     background-size: 10px;
     background-position-x: 90%;
+  }
+  .cart-drawer__footer-discounts {
+    margin-block: 1rem;
+  }
+  .cart-drawer__footer .discounts__discount {
+    font-size: 1.2rem;
   }
 }
 
