@@ -581,8 +581,7 @@ body.index .section-header.scrolled-past-header .header-wrapper--border-bottom {
     font-size: 12px;
   }
   body .utility-bar .announcement-bar__message {
-    padding: 2.5px 0;
-    min-height: 2.4rem;
+    padding: 5px 0;
     font-size: 14px;
   }
 }
@@ -1326,12 +1325,11 @@ body .quantity-tooltip {
   border: none;
 }
 .utility-bar .announcement-bar__announcement .announcement-bar__message {
-  min-height: unset;
-  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 .utility-bar .announcement-bar__announcement .announcement-bar__message span {
   line-height: 1;
-  vertical-align: middle;
 }
 .announcement-bar-slider .svg-wrapper {
   position: relative;
