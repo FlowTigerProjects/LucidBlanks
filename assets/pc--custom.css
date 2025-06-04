@@ -452,9 +452,6 @@ body.index .section-header.scrolled-past-header .header-wrapper--border-bottom {
   .header_menu {
     display: none;
   }
-  body.index .section-header {
-    top: 24px;
-  }
   header-drawer summary.header__icon {
     width: 48px;
     height: 48px;
