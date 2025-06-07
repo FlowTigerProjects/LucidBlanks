@@ -12,9 +12,9 @@
     "pc_banner_section_LNLitr": {
       "type": "pc--banner-section",
       "settings": {
-        "banner_img": "shopify://shop_images/banner-img.png",
-        "banner_mob_img": "shopify://shop_images/banner-img-mobile.png",
-        "banner_title": "<h2>The Future Of <br/>Versatile Loungewear</h2>",
+        "banner_img": "shopify://shop_images/eGroup_1073717403_1.webp",
+        "banner_mob_img": "shopify://shop_images/Group_1073717580.webp",
+        "banner_title": "<h2>The Future Of <br/>Versatile Blanks</h2>",
         "btn_url": "shopify://collections/all",
         "btn_text": "Shop All"
       }
@@ -22,9 +22,9 @@
     "featured_collection_fTbYDa": {
       "type": "featured-collection",
       "settings": {
-        "collection": "crewnecks",
+        "collection": "best-sellers",
         "products_to_show": 8,
-        "title": "Best Sellers",
+        "title": "LucidBlanks Essentials",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -86,9 +86,9 @@
     "featured_collection_rLNFEd": {
       "type": "featured-collection",
       "settings": {
-        "collection": "hoodies",
+        "collection": "t-shirts",
         "products_to_show": 8,
-        "title": "Best Sellers",
+        "title": "Summer Tees",
         "heading_size": "h2",
         "description": "",
         "show_description": false,

@@ -17,21 +17,21 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "ALL DUTIES & TAXES INCLUDED",
+            "text": "SUMMER SALE 20% OFF ALL ORDERS",
             "link": ""
           }
         },
         "announcement_NrkfWG": {
           "type": "announcement",
           "settings": {
-            "text": "INTERTIONAL SHIPPING AVAILABLE",
+            "text": "FREE DOMESTIC SHIPPING ORDERS $90+",
             "link": ""
           }
         },
         "announcement_KBnQCF": {
           "type": "announcement",
           "settings": {
-            "text": "15% OFF + FREE DOMESTIC SHIPPING ORDERS $90",
+            "text": "INTERTIONAL SHIPPING AVAILABLE",
             "link": ""
           }
         }
