@@ -1644,6 +1644,35 @@ body .utility-bar .announcement-bar__message {
   }
 }
 
+button.cart__checkout-button span {
+  font-family: inherit !important;
+}
+button.cart__checkout-button {
+  min-height: 5.5rem;
+}
+button.cart__checkout-button .loading__spinner {
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+}
+cart-drawer button.cart__checkout-button .loading__spinner svg circle {
+  stroke: #fff;
+}
+button.cart__checkout-button:not(.aiod_cart_loaded) .loading__spinner {
+  display: inline-block;
+}
+button.cart__checkout-button:not(.aiod_cart_loaded) .checkout-price {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  button.cart__checkout-button {
+    min-height: 4.5rem;
+  }
+}
+
 
 
 

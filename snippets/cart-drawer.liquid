@@ -488,7 +488,12 @@
                 disabled
               {% endif %}
             >
-              {{ 'sections.cart.checkout' | t }} — {{ cart.total_price | money_with_currency }}
+              <span class="checkout-price">
+                {{ 'sections.cart.checkout' | t }} — {{ cart.total_price | money_with_currency }}
+              </span>
+              <span class="loading__spinner">
+                {{ 'loading-spinner.svg' | inline_asset_content }}
+              </span>
             </button>
           </div>
           {% endif %}
